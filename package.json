@@ -4,9 +4,6 @@
   "description": "NativeScript accelerometer plugin.",
   "main": "index.js",
   "typings": "index.d.ts",
-  "scripts": {
-    "prepublish": "tsc"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/vakrilov/native-script-accelerometer.git"
@@ -21,7 +18,7 @@
       "ios": "3.0.0",
       "android": "3.0.0"
     },
-    "tns-ios": {
+    "tns-ios": { 
       "version": "3.0.0"
     }
   },
