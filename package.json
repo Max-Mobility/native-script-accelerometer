@@ -1,5 +1,5 @@
 {
-  "name": "nativescript-accelerometer",
+  "name": "nativescript-accelerometer-tweaked",
   "version": "2.0.1",
   "description": "NativeScript accelerometer plugin.",
   "main": "index.js",
@@ -26,17 +26,18 @@
     }
   },
   "author": {
-    "name": "Alexander Vakrilov <alexander.vakrilov@gmail.com>"
+    "name": "Sktzoootech <sktzoootech@gmail.com>"
   },
   "contributors": [
+    "Sktzoootech <sktzoootech@gmail.com>",
     "Alexander Vakrilov <alexander.vakrilov@gmail.com>",
     "Shawn Pavel <shawn@liveshopper.com>"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vakrilov/native-script-accelerometer.git/issues"
+    "url": "https://github.com/sktzoootech/native-script-accelerometer.git/issues"
   },
-  "homepage": "https://github.com/vakrilov/native-script-accelerometer",
+  "homepage": "https://github.com/sktzoootech/native-script-accelerometer",
   "peerDependencies": {
     "tns-core-modules": ">2.0.0"
   },
