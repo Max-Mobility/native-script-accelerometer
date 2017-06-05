@@ -50,7 +50,7 @@ export function startAccelerometerUpdates(callback: (AccelerometerData) => void,
     }
 
     if (!accelerometerSensor) {
-        accelerometerSensor = sensorManager.getDefaultSensor(android.hardware.Sensor.TYPE_ACCELEROMETER);
+        accelerometerSensor = sensorManager.getDefaultSensor(android.hardware.Sensor.TYPE_LINEAR_ACCELERATION);
         if (!accelerometerSensor) {
             throw Error("Could get accelerometer sensor.")
         }
