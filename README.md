@@ -10,7 +10,7 @@ This plugin is based on the original accelerometer plugin except that it uses TY
 
 ## Usage
 ```
-var accelerometer = require("nativescript-accelerometer");
+var accelerometer = require("nativescript-accelerometer-tweaked");
 
 accelerometer.startAccelerometerUpdates(function(data) {
     console.log("x: " + data.x + "y: " + data.y + "z: " + data.z);
