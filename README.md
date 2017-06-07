@@ -3,7 +3,7 @@ Accelerometer plugin for NativeScript with TYPE_LINEAR_ACCELERATION
 
 ## Installation
 ```
-tns plugin add nativescript-accelerometer
+tns plugin add nativescript-accelerometer-tweaked
 ```
 
 This plugin is based on the original accelerometer plugin except that it uses TYPE_LINEAR_ACCELERATION rather than TYPE_ACCELEROMETER
