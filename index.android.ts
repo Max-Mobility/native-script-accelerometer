@@ -7,6 +7,9 @@ const baseAcceleration = -9.81;
 var sensorListener;
 var sensorManager;
 var accelerometerSensor;
+var compassSensor;
+var gravitySensor;
+var rotationSensor;
 
 function getNativeDelay(options?: AccelerometerOptions): number {
     if (!options || !options.sensorDelay) {
@@ -49,13 +52,35 @@ export function startAccelerometerUpdates(callback: (AccelerometerData) => void,
         }
     }
 
+
     if (!accelerometerSensor) {
-        accelerometerSensor = sensorManager.getDefaultSensor(android.hardware.Sensor.TYPE_LINEAR_ACCELERATION);
+        accelerometerSensor = getAccelerometer(sensorManager);
         if (!accelerometerSensor) {
-            throw Error("Could get accelerometer sensor.")
+            throw Error("Could not get accelerometer sensor.");
         }
     }
+    if(!compassSensor) {
+        compassSensor = getCompass(sensorManager);
 
+        if (!compassSensor) {
+            throw Error("Could not get compass sensor.");
+        }
+    }
+    if(!gravitySensor) {        
+        gravitySensor = getGravity(sensorManager);
+
+        if (!gravitySensor) {
+            throw Error("Could not get gravity sensor.");
+        }        
+    }
+    if(!rotationSensor) {
+        rotationSensor = getRotationVector(sensorManager);
+
+        if (!rotationSensor) {
+            throw Error("Could not get rotation sensor.");
+        
+        }
+    }
 
     sensorListener = new android.hardware.SensorEventListener({
         onAccuracyChanged: (sensor, accuracy) => {
@@ -75,6 +100,22 @@ export function startAccelerometerUpdates(callback: (AccelerometerData) => void,
         accelerometerSensor,
         nativeDelay
     );
+}
+
+function getAccelerometer(sensorManager){
+    return sensorManager.getDefaultSensor(android.hardware.Sensor.TYPE_LINEAR_ACCELERATION);
+}
+
+function getCompass(sensorManager){
+    return sensorManager.getDefaultSensor(android.hardware.Sensor.TYPE_MAGNETIC_FIELD);
+}
+
+function getGravity(sensorManager){
+    return sensorManager.getDefaultSensor(android.hardware.Sensor.TYPE_GRAVITY);
+}
+
+function getRotationVector(sensorManager){
+    return sensorManager.getDefaultSensor(android.hardware.Sensor.TYPE_ROTATION_VECTOR);
 }
 
 export function stopAccelerometerUpdates() {
