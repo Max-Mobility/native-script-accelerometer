@@ -100,11 +100,10 @@ export function startAccelerometerUpdates(callback: (AccelerometerData) => void,
     });
 
     const nativeDelay = getNativeDelay(options);
-    sensorManager.registerListener(
-        sensorListener,
-        accelerometerSensor,
-        nativeDelay
-    );
+    sensorManager.registerListener(sensorListener,accelerometerSensor,nativeDelay);
+    sensorManager.registerListener(sensorListener, compassSensor, nativeDelay);
+    sensorManager.registerListener(sensorListener, gravitySensor, nativeDelay);
+    sensorManager.registerListener(sensorListener, rotationSensor, nativeDelay);        
 }
 
 function getAccelerometer(sensorManager){
