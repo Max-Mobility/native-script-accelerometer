@@ -86,10 +86,15 @@ export function startAccelerometerUpdates(callback: (AccelerometerData) => void,
         onAccuracyChanged: (sensor, accuracy) => {
         },
         onSensorChanged: (event) => {
+            var sensorType = event.sensor.getType(); 
+            var d = new Date();
+            var n = d.getMilliseconds();            
             wrappedCallback({
                 x: event.values[0] / baseAcceleration,
                 y: event.values[1] / baseAcceleration,
-                z: event.values[2] / baseAcceleration
+                z: event.values[2] / baseAcceleration,
+                sensortype: sensorType,
+                curenttime: n
             })
         }
     });
