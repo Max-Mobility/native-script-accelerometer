@@ -94,7 +94,7 @@ export function startAccelerometerUpdates(callback: (AccelerometerData) => void,
                 y: event.values[1] / baseAcceleration,
                 z: event.values[2] / baseAcceleration,
                 sensortype: sensorType,
-                curenttime: n
+                timemilli: n
             })
         }
     });

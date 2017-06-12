@@ -13,7 +13,7 @@ This plugin is based on the original accelerometer plugin except that it uses TY
 var accelerometer = require("nativescript-accelerometer-tweaked");
 
 accelerometer.startAccelerometerUpdates(function(data) {
-    console.log("x: " + data.x + "y: " + data.y + "z: " + data.z);
+    console.log(" X: " + data.x + " Y: " + data.y + " Z: " + data.z + " Sensor Type: " + data.sensortype + " Time in milliseconds : " + data.timemilli);
 }, { sensorDelay: "ui" });
 ```
 
@@ -29,6 +29,13 @@ accelerometer.startAccelerometerUpdates(function(data) {
     * Face Up -1
     * Face Down 1
     * Sideways 0
+* sensortype
+    * TYPE_LINEAR_ACCELERATION 10
+    * TYPE_GRAVITY 9
+    * TYPE_MAGNETIC_FIELD 2
+    * TYPE_ROTATION_VECTOR 11
+* timemilli
+    * returns time in milliseconds can be used to put an interval incase you want to delay saving to a db or for whatever purpose.
 
 ## Options
 
