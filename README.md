@@ -1,9 +1,13 @@
 # NativeScript Accelerometer Plugin
-Accelerometer plugin for NativeScript with TYPE_LINEAR_ACCELERATION
+Accelerometer plugin for NativeScript that uses the following sensors:     
+    * TYPE_LINEAR_ACCELERATION
+    * TYPE_GRAVITY
+    * TYPE_MAGNETIC_FIELD
+    * TYPE_ROTATION_VECTOR
 
 ## Installation
 ```
-tns plugin add nativescript-accelerometer-tweaked
+tns plugin add nativescript-accelerometer-advanced
 ```
 
 This plugin is based on the original accelerometer plugin except rather than listening to only TYPE_ACCELEROMETER, it listens to the following sensors:
@@ -14,7 +18,7 @@ This plugin is based on the original accelerometer plugin except rather than lis
 
 ## Usage
 ```
-var accelerometer = require("nativescript-accelerometer-tweaked");
+var accelerometer = require("nativescript-accelerometer-advanced");
 
 accelerometer.startAccelerometerUpdates(function(data) {
     console.log(" X: " + data.x + " Y: " + data.y + " Z: " + data.z + " Sensor Type: " + data.sensortype + " Time in milliseconds : " + data.timemilli);
